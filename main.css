@@ -49,6 +49,7 @@ div {
     resize: none;
     border: none;
     outline: none;
+    padding: 0;
 }
 #preview {
     position: absolute;
