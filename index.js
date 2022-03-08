@@ -14,7 +14,7 @@ togglePreview.onclick = function() {
     } else {
         togglePreview.innerText = 'Preview';
     }
-    preview.innerHTML = marked.parse(editor.value);
+    preview.innerHTML = marked.parse(editor.value.replace('<script', ''));
 }
 
 document.body.onload = function() {
