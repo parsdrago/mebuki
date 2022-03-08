@@ -15,6 +15,10 @@ togglePreview.onclick = function() {
         togglePreview.innerText = 'Preview';
     }
     preview.innerHTML = marked.parse(editor.value.replace('<script', ''));
+    const header = document.querySelector('h1');
+    if (header) {
+        document.title = header.innerText + ' - mebuki';
+    }
 }
 
 document.body.onload = function() {
