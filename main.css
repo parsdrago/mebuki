@@ -1,3 +1,7 @@
+:root {
+    --navigation-height: 50px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +17,28 @@ body {
     height: 100%;
 }
 
-#editor {
+#navigation {
+    height: var(--navigation-height);
+}
+
+#editorArea {
     width: 100%;
-    height: 100%;
+    height: calc(100% - var(--navigation-height));
+}
+#editor {
+    position:absolute;
+    width: 100%;
+    height: calc(100% - var(--navigation-height));
+}
+#preview {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: calc(100% - var(--navigation-height));
+}
+#editor-area.preview #editor {
+    display: none;
+}
+#editor-area.preview #preview {
+    display: block;
 }
