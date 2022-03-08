@@ -1,11 +1,9 @@
 :root {
     --navigation-height: 50px;
+    --max-width: 800px;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -13,28 +11,52 @@ html {
 }
 
 body {
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
 }
 
+div {
+    margin: 0;
+    padding: 0;
+}
+
 #navigation {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+    width: min(var(--max-width), 100%);
     height: var(--navigation-height);
 }
 
-#editorArea {
-    width: 100%;
+#toggle-preview {
+    width: 7em;
+    height: 2em;
+}
+
+#editor-area {
+    margin: 0 auto;
+    width: min(var(--max-width), 100%);
     height: calc(100% - var(--navigation-height));
 }
 #editor {
     position:absolute;
-    width: 100%;
+    width: min(var(--max-width), 100%);
     height: calc(100% - var(--navigation-height));
+    resize: none;
+    border: none;
+    outline: none;
 }
 #preview {
     position: absolute;
     display: none;
-    width: 100%;
+    width: min(var(--max-width), 100%);
     height: calc(100% - var(--navigation-height));
+    word-break: break-all;
+    overflow-y: auto;
 }
 #editor-area.preview #editor {
     display: none;

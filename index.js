@@ -9,6 +9,11 @@ editor.onchange = function() {
 
 togglePreview.onclick = function() {
     editorArea.classList.toggle('preview');
+    if (editorArea.classList.contains('preview')) {
+        togglePreview.innerText = 'Edit';
+    } else {
+        togglePreview.innerText = 'Preview';
+    }
     preview.innerHTML = marked.parse(editor.value);
 }
 
